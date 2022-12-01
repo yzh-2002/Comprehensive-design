@@ -6,10 +6,13 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from '@ant-design/icons';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Image } from 'antd';
 const { Header, Sider, Content } = Layout;
 
 import "@/style/layout.css"
+
+import HeaderImage from "@/assets/header.png"
+import LogoImage from "@/assets/logo.png"
 
 function App() {
   const [collapsed,setCollapsed] =useState(false);
@@ -22,7 +25,12 @@ function App() {
           setCollapsed(broken)
         }}
       >
-        <div className="logo"></div>
+        <div className="logo">
+          <Image
+            preview={false}
+            src={!collapsed ? HeaderImage : LogoImage}
+          ></Image>
+        </div>
         <Menu
           theme="dark"
           mode="inline"
