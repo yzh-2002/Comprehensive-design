@@ -1,16 +1,10 @@
-// import { app, BrowserWindow } from "electron"
-// import path from "path"
-// import url from "url"
-
-// import { DevUrl } from "./AppConfig"
-
-const { app, BrowserWindow } =require("electron")
+const { app, BrowserWindow, Menu } =require("electron")
 const path =require("path")
 const url =require("url")
 
 const { DevUrl } =require("./AppConfig")
 
-// 
+
 let mainWindow;
 
 function createWindow(){
@@ -33,3 +27,6 @@ app.on("window-all-closed",function(){
     }
 })
 
+
+// 取消默认的菜单栏
+Menu.setApplicationMenu(null)
